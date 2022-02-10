@@ -1,0 +1,40 @@
+# Little Dipper
+import turtle
+import random
+turtle.bgcolor("darkblue")
+turtle.speed(0)
+turtle.hideturtle()
+
+def ursaminor(i,j):
+    
+    for iter in range(5):
+        lst=["red","green","orange", "yellow","darkgray","brown","lightgreen"]
+        turtle.color(lst[random.randint(0,6)])
+        turtle.forward(i)           
+        turtle.right(j)               
+
+x=+340
+y=280
+coordinates=((x,y),(x-105,y-15),(x-220,y-60),(x-290,y-145),(x-315,y-258), (x-395,y-260), (x-375,y-135))
+
+def starconnect():
+    for i in range(1):
+        ursaminor(12,144)
+
+for i in coordinates:
+    turtle.penup()
+    turtle.setpos(i)
+    turtle.pendown()
+    starconnect()
+
+my=turtle.Turtle()
+my.hideturtle()
+my.penup()
+
+for i in coordinates:
+    my.goto(i)
+    my.color("yellow")
+    my.pendown()
+my.goto(coordinates[-4])
+
+turtle.exitonclick()
